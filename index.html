@@ -18,10 +18,33 @@
   en la carpeta como fuente).
   Regla del repo: sin cifras de ingresos, sin promesas de salud ni de retorno.
   Cambios (2026-11-23): enlaces de compra apuntan a la página de productos de
-  Immunotec España; hero centrado con la foto ampliada; retirados el vídeo y los
-  testimonios provisionales hasta tener contenido real; ficha de producto
-  optimizada a JPG; favicon y metadatos sociales añadidos. og:image y og:url
-  apuntan ya al subdominio definitivo hristo.vasilevlegacy.net.
+  Immunotec España; retirados el vídeo y los testimonios provisionales hasta
+  tener contenido real; ficha de producto optimizada a JPG; favicon y metadatos
+  sociales añadidos. og:image y og:url apuntan ya al subdominio definitivo
+  hristo.vasilevlegacy.net.
+  Cambios (2026-11-24): estética de la intro tomada de la referencia de
+  Mauricio Carreño (supermlm.vercel.app): hero alineado a la izquierda con la
+  foto de perfil en línea junto al nombre (diámetro intermedio 9.5rem),
+  banda de degradado azul claro superior, arcos concéntricos SVG en la
+  esquina superior derecha (ocultos en móvil), barra superior azul de 4px,
+  h1 hasta 3.9rem con interlineado 1.04 y eyebrow en versalitas azul
+  (solo dentro del hero).
+  Cambios (2026-11-24, 2): separación texto-foto en la intro (gap 1.25rem),
+  anillo ping alrededor de la foto (misma animación que el botón flotante de
+  WhatsApp, 2.4s) y sección nueva "La ciencia del glutatión" tras la de
+  producto: las cifras de la diapositiva 7 de "Descubre Immunotec
+  Presentació.pdf" (fuente: OneDrive/Escriptori/Immunotec) reconstruidas como
+  tarjetas HTML trilingües (así el selector de idioma las traduce, cosa que
+  una imagen no permite), la foto recortada del Dr. Jimmy Gutman
+  (dr-gutman.jpg), la imagen de la diapositiva 9 del flipchart oficial en
+  inglés (DiscoverFlipchart-US.pdf, fuente: Descargas) y la cita de
+  Dr. Luc Montagnier, todo etiquetado como afirmaciones de la compañía con
+  asterisco y aviso de   que no diagnostica, trata ni previene.
+  Cambios (2026-11-24, 3): la ficha de producto (immunocal-sheet.jpg) se
+  sustituye por la foto oficial del envase de Immunocal (immunocal-box.jpg,
+  recortada a 1080x661 en formato apaisado a ancho completo, para integrarse
+  bien con la imagen de la sección de ciencia); la nota al pie indica que el
+  envase está en inglés.
   Cambios (2026-11-23, 2): selector de idioma ES/EN/BG sin JavaScript, con
   radios ocultos y :checked; cada texto tiene tres variantes (clases l-es,
   l-en, l-bg) y los mensajes preescritos de WhatsApp van por idioma. La
@@ -69,6 +92,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
+    position:relative;
     background:var(--background);
     color:var(--foreground);
     font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
@@ -90,6 +114,14 @@
   }
   .wordmark{font-family:"Montserrat",sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.14em;color:var(--primary)}
   .header-note{font-size:.8rem;color:var(--muted-foreground)}
+
+  /* barra superior y banda de degradado (estética de la intro) */
+  .top-bar{position:relative;z-index:1;height:4px;background:var(--primary)}
+  .page-band{
+    position:absolute;top:0;left:0;right:0;height:44rem;z-index:0;
+    pointer-events:none;
+    background:linear-gradient(180deg,#e4f2fb 0%,#f3f9fd 55%,#ffffff 100%);
+  }
 
   /* selector de idioma sin JavaScript */
   .lang-radio{
@@ -168,8 +200,8 @@
     letter-spacing:.16em;color:var(--primary);margin-bottom:.5rem;
   }
   h1{
-    font-size:clamp(2.1rem,6.2vw,3.4rem);
-    font-weight:700;line-height:1.08;color:var(--navy);
+    font-size:clamp(2.1rem,6.2vw,3.9rem);
+    font-weight:700;line-height:1.04;color:var(--navy);
   }
   h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;line-height:1.2;margin-bottom:.6rem}
   h3{font-size:1.08rem;margin-bottom:.3rem}
@@ -181,29 +213,50 @@
   .orb{
     position:absolute;border-radius:50%;filter:blur(64px);z-index:0;pointer-events:none;
   }
-  .orb-1{width:24rem;height:24rem;background:rgba(20,147,214,.20);top:-6rem;right:-8rem;animation:drift 18s ease-in-out infinite}
-  .orb-2{width:20rem;height:20rem;background:rgba(8,122,193,.15);bottom:-8rem;left:-6rem;animation:drift 18s ease-in-out -6s infinite}
+  .orb-1{width:24rem;height:24rem;background:rgba(20,147,214,.20);top:2.5rem;left:-6rem;animation:drift 18s ease-in-out infinite}
+  .orb-2{width:20rem;height:20rem;background:rgba(8,122,193,.15);top:18rem;right:-5rem;animation:drift 18s ease-in-out -6s infinite}
   @keyframes drift{
     0%,100%{transform:translate(0,0) scale(1)}
     50%{transform:translate(3%,-4%) scale(1.08)}
   }
   .hero .container{position:relative;z-index:1}
   .hero-intro{
-    display:flex;flex-direction:column;align-items:center;text-align:center;
-    margin-bottom:1.6rem;
+    display:flex;flex-direction:row;align-items:center;
+    gap:1.25rem;margin-bottom:1.6rem;
   }
-  .hero h1{text-align:center}
-  .hero .cta-row{justify-content:center}
-  .hero .trust{width:max-content;max-width:100%;margin-left:auto;margin-right:auto}
+  .hero h1{text-align:left}
+  .hero .cta-row{justify-content:flex-start}
+  .hero .trust{width:auto;max-width:100%}
+
+  /* arcos concéntricos decorativos en la esquina superior derecha */
+  .hero-arcs{
+    position:absolute;top:-2.5rem;right:-1.5rem;width:20rem;z-index:0;
+    pointer-events:none;overflow:visible;
+  }
+  @media (max-width:40rem){.hero-arcs{display:none}}
 
   .attend{display:flex;align-items:center;gap:.9rem;margin-bottom:1.1rem}
+  .avatar-wrap{
+    position:relative;display:inline-block;flex-shrink:0;border-radius:50%;
+  }
+  .avatar-wrap .ping-ring{inset:-2px;animation-duration:2.4s}
   .avatar{
-    width:15rem;height:15rem;border-radius:50%;flex-shrink:0;
+    width:9.5rem;height:9.5rem;border-radius:50%;flex-shrink:0;
     object-fit:cover;border:2px solid #fff;
     box-shadow:0 4px 12px rgba(8,122,193,.20);
   }
+  @media (max-width:30rem){
+    .avatar{width:8rem;height:8rem}
+  }
   .attend-name{font-weight:700;color:var(--navy)}
   .attend-role{font-size:.85rem;color:var(--muted-foreground)}
+  /* eyebrow de la intro, estilo Mauricio, solo dentro del hero */
+  .hero .attend-name{
+    font-size:.875rem;font-weight:600;text-transform:uppercase;
+    letter-spacing:.16em;color:var(--primary);
+  }
+  .hero .attend-role{font-size:.75rem;margin-top:.125rem;color:var(--muted-foreground)}
+  .hero-lede{margin:1.25rem 0 0;max-width:36rem;font-size:1.125rem;color:var(--muted-foreground)}
 
   .cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
   .btn{
@@ -253,7 +306,7 @@
 
   /* producto */
   .product-img{
-    width:100%;border-radius:1rem;
+    width:100%;height:auto;border-radius:1rem;
     margin:0 auto .6rem;display:block;
     border:1px solid var(--border);
   }
@@ -272,6 +325,20 @@
     background:var(--accent);color:var(--primary);font-weight:700;font-size:.75rem;
     display:inline-flex;align-items:center;justify-content:center;margin-top:.15rem;
   }
+
+  /* ciencia del glutatión */
+  blockquote{border-left:3px solid var(--primary);margin:1.2rem 0 0;padding:.1rem 0 .1rem 1rem}
+  blockquote p{margin:0}
+  .science-grid{display:grid;gap:1.2rem;grid-template-columns:1fr}
+  @media (min-width:52rem){.science-grid{grid-template-columns:1fr 15rem}}
+  .stats-lead{margin:0 0 .8rem;font-weight:600;color:var(--navy)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:.7rem;margin:0 0 .9rem}
+  .stat{background:var(--accent);border-radius:1rem;padding:.85rem .7rem;text-align:center}
+  .stat b{display:block;font-family:"Montserrat","Inter",sans-serif;font-size:1.35rem;font-weight:800;color:var(--primary);line-height:1.15}
+  .stat small{display:block;font-size:.74rem;color:var(--muted-foreground);margin-top:.15rem}
+  .gutman{margin:0}
+  .gutman img{width:100%;height:auto;border-radius:1rem;border:1px solid var(--border);display:block}
+  .gutman figcaption{font-size:.78rem;color:var(--muted-foreground);margin-top:.5rem;text-align:center}
 
   .warn{
     background:#fdf6ec;border:1px solid #ecd9b8;
@@ -396,6 +463,8 @@
 <input class="lang-radio" type="radio" name="lang" id="lang-bg">
 
 <div class="tricolor bg-only" aria-hidden="true"></div>
+<div class="top-bar" aria-hidden="true"></div>
+<div class="page-band" aria-hidden="true"></div>
 
 <header>
   <div class="container">
@@ -418,9 +487,30 @@
     <div class="bg-flag bg-flag-1 bg-only" aria-hidden="true"></div>
     <div class="bg-flag bg-flag-2 bg-only" aria-hidden="true"></div>
     <div class="bg-flag bg-flag-3 bg-only" aria-hidden="true"></div>
+    <svg class="hero-arcs" viewBox="0 0 320 320" aria-hidden="true">
+      <defs>
+        <radialGradient id="arcs-fade" cx="1" cy="0" r="1">
+          <stop offset="0" stop-color="#1493d6" stop-opacity="0.35"/>
+          <stop offset="1" stop-color="#1493d6" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="arcs-stroke" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#087ac1" stop-opacity="0.55"/>
+          <stop offset="1" stop-color="#1493d6" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <circle cx="320" cy="0" r="320" fill="url(#arcs-fade)"/>
+      <circle cx="320" cy="0" r="70" fill="none" stroke="url(#arcs-stroke)" stroke-width="1.5"/>
+      <circle cx="320" cy="0" r="120" fill="none" stroke="url(#arcs-stroke)" stroke-width="1.5"/>
+      <circle cx="320" cy="0" r="170" fill="none" stroke="url(#arcs-stroke)" stroke-width="1.5"/>
+      <circle cx="320" cy="0" r="220" fill="none" stroke="url(#arcs-stroke)" stroke-width="1.5"/>
+      <circle cx="320" cy="0" r="270" fill="none" stroke="url(#arcs-stroke)" stroke-width="1.5"/>
+    </svg>
     <div class="container">
       <div class="hero-intro">
-        <img class="avatar" src="perfil-hristo.jpg" alt="Hristo Vasilev">
+        <span class="avatar-wrap">
+          <span class="ping-ring" aria-hidden="true"></span>
+          <img class="avatar" src="perfil-hristo.jpg" alt="Hristo Vasilev">
+        </span>
         <div>
           <div class="attend-name"><span class="l-es" lang="es">Te atiende Hristo Vasilev</span><span class="l-en" lang="en">Hristo Vasilev will help you</span><span class="l-bg" lang="bg">При теб е Христо Василев</span></div>
           <div class="attend-role"><span class="l-es" lang="es">Consultor Independiente de Immunotec</span><span class="l-en" lang="en">Independent Immunotec Consultant</span><span class="l-bg" lang="bg">Независим консултант на Immunotec</span></div>
@@ -428,7 +518,7 @@
       </div>
 
       <h1><span class="l-es" lang="es">Tu primer paso con Immunotec es una conversación con Hristo Vasilev</span><span class="l-en" lang="en">Your first step with Immunotec is a conversation with Hristo Vasilev</span><span class="l-bg" lang="bg">Първата ти стъпка с Immunotec е разговор с Христо Василев</span></h1>
-      <p style="margin:1rem auto 0;max-width:42rem;text-align:center"><span class="l-es" lang="es">
+      <p class="hero-lede"><span class="l-es" lang="es">
         Si has llegado hasta aquí, es porque algo de Immunocal te ha llamado la atención.
         En pocos minutos vas a entender qué es, cómo se toma y cómo pedirlo.
         Te lo explica una persona real, sin presión y a tu ritmo.
@@ -512,18 +602,18 @@
       <p class="kicker"><span class="l-es" lang="es">El producto</span><span class="l-en" lang="en">The product</span><span class="l-bg" lang="bg">Продуктът</span></p>
       <h2 class="reveal">Immunocal</h2>
       <div class="card" style="margin-top:1.25rem">
-        <a class="product-img-link" href="immunocal-sheet.jpg" target="_blank" rel="noopener" title="Abrir la imagen en grande">
-          <img class="product-img" src="immunocal-sheet.jpg" width="1600" height="1100" alt="Ficha de producto de Immunocal: beneficios clave, forma de uso y certificaciones" loading="lazy" decoding="async">
+        <a class="product-img-link" href="immunocal-box.jpg" target="_blank" rel="noopener" title="Abrir la imagen en grande">
+          <img class="product-img" src="immunocal-box.jpg" width="1080" height="661" alt="Caja oficial de Immunocal, precursor de glutatión de Immunotec" loading="lazy" decoding="async">
         </a>
         <p class="footnote" style="text-align:center;margin-bottom:1.25rem"><span class="l-es" lang="es">
-          Ficha de producto de Immunotec: los beneficios indicados son afirmaciones de la compañía.
+          Imagen del envase oficial de Immunocal (en inglés).
           Toca la imagen para verla en grande.
         </span><span class="l-en" lang="en">
-          Immunotec product sheet (in Spanish): the benefits listed are the company's
-          claims. Tap the image to see it larger.
+          Image of the official Immunocal container (in English).
+          Tap the image to see it larger.
         </span><span class="l-bg" lang="bg">
-          Фиш на продукта на Immunotec (на испански): посочените ползи са твърдения
-          на компанията. Докосни изображението, за да го видиш по-голямо.
+          Изображение на официалната опаковка на Immunocal (на английски).
+          Докосни изображението, за да го видиш по-голямо.
         </span></p>
         <p class="path-tag"><span class="l-es" lang="es">Suplemento alimenticio</span><span class="l-en" lang="en">Dietary supplement</span><span class="l-bg" lang="bg">Хранителна добавка</span></p>
         <h3 style="margin:.2rem 0 .5rem;font-size:1.3rem">Immunocal</h3>
@@ -585,6 +675,89 @@
         консултирай се предварително със здравен специалист. Следвай инструкциите
         за приготвяне от опаковката. Съхранявай опаковката затворена на хладно и
         сухо място, недостъпно за деца.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CIENCIA DEL GLUTATIÓN ============ -->
+  <section>
+    <div class="container">
+      <p class="kicker"><span class="l-es" lang="es">La ciencia</span><span class="l-en" lang="en">The science</span><span class="l-bg" lang="bg">Науката</span></p>
+      <h2 class="reveal"><span class="l-es" lang="es">La ciencia del glutatión</span><span class="l-en" lang="en">The science of glutathione</span><span class="l-bg" lang="bg">Науката за глутатиона</span></h2>
+
+      <div class="card" style="margin-top:1.25rem">
+        <div class="science-grid">
+          <div>
+            <p class="stats-lead"><span class="l-es" lang="es">Immunocal en cifras, según la presentación oficial de la compañía:*</span><span class="l-en" lang="en">Immunocal in numbers, according to the company's official presentation:*</span><span class="l-bg" lang="bg">Immunocal в цифри, според официалното представяне на компанията:*</span></p>
+            <div class="stats">
+              <div class="stat"><span class="l-es" lang="es"><b>+500 M</b><small>porciones vendidas</small></span><span class="l-en" lang="en"><b>500M+</b><small>servings sold</small></span><span class="l-bg" lang="bg"><b>+500 млн.</b><small>продадени порции</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>Millones</b><small>de clientes felices</small></span><span class="l-en" lang="en"><b>Millions</b><small>of happy customers</small></span><span class="l-bg" lang="bg"><b>Милиони</b><small>доволни клиенти</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>+45</b><small>años de investigación</small></span><span class="l-en" lang="en"><b>45+</b><small>years of research</small></span><span class="l-bg" lang="bg"><b>+45</b><small>години изследвания</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>3</b><small>versiones diferentes</small></span><span class="l-en" lang="en"><b>3</b><small>different versions</small></span><span class="l-bg" lang="bg"><b>3</b><small>различни версии</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>23</b><small>estudios doble ciego</small></span><span class="l-en" lang="en"><b>23</b><small>double-blind studies</small></span><span class="l-bg" lang="bg"><b>23</b><small>проучвания с двойно слепяване</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>+85</b><small>estudios publicados</small></span><span class="l-en" lang="en"><b>85+</b><small>published studies</small></span><span class="l-bg" lang="bg"><b>+85</b><small>публикувани проучвания</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>+400</b><small>artículos de sus creadores</small></span><span class="l-en" lang="en"><b>400+</b><small>articles by its creators</small></span><span class="l-bg" lang="bg"><b>+400</b><small>статии на създателите му</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>+125</b><small>instituciones involucradas</small></span><span class="l-en" lang="en"><b>125+</b><small>institutions involved</small></span><span class="l-bg" lang="bg"><b>+125</b><small>ангажирани институции</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>78</b><small>patentes internacionales</small></span><span class="l-en" lang="en"><b>78</b><small>international patents</small></span><span class="l-bg" lang="bg"><b>78</b><small>международни патента</small></span></div>
+              <div class="stat"><span class="l-es" lang="es"><b>+70</b><small>atletas patrocinados</small></span><span class="l-en" lang="en"><b>70+</b><small>sponsored athletes</small></span><span class="l-bg" lang="bg"><b>+70</b><small>спонсорирани спортисти</small></span></div>
+            </div>
+            <p class="footnote"><span class="l-es" lang="es">Pruebas y certificaciones de terceros: Informed Sport y Clean Label. Immunocal figura en los libros de referencia médica PDR (EE. UU.) y CPS (Canadá).</span><span class="l-en" lang="en">Third-party testing and certifications: Informed Sport and Clean Label. Immunocal is listed in the PDR (U.S.) and CPS (Canada) medical reference books.</span><span class="l-bg" lang="bg">Независими изпитвания и сертификации: Informed Sport и Clean Label. Immunocal е включен в медицинските справочници PDR (САЩ) и CPS (Канада).</span></p>
+          </div>
+          <figure class="gutman">
+            <img src="dr-gutman.jpg" width="901" height="835" alt="Dr. Jimmy Gutman, Presidente del Consejo Asesor Científico de Immunotec" loading="lazy" decoding="async">
+            <figcaption><span class="l-es" lang="es">Dr. Jimmy Gutman, Presidente del Consejo Asesor Científico de Immunotec</span><span class="l-en" lang="en">Dr. Jimmy Gutman, Chairman of Immunotec's Scientific Advisory Board</span><span class="l-bg" lang="bg">Д-р Джимъти Гътман, председател на Научния консултативен съвет на Immunotec</span></figcaption>
+          </figure>
+        </div>
+
+        <p><span class="l-es" lang="es">
+          Tu cuerpo produce glutatión a partir de tres aminoácidos: glicina, glutamato
+          y cisteína. Immunocal aporta Cisteína Enlazada®, un precursor exclusivo que
+          tu cuerpo utiliza para producir glutatión por sí mismo.*
+        </span><span class="l-en" lang="en">
+          Your body makes glutathione from three amino acids: glycine, glutamate and
+          cysteine. Immunocal provides Bonded Cysteine® (Cisteína Enlazada®), an
+          exclusive precursor your body uses to produce glutathione on its own.*
+        </span><span class="l-bg" lang="bg">
+          Тялото ти произвежда глутатион от три аминокиселини: глицин, глутамат и
+          цистеин. Immunocal осигурява Cisteína Enlazada® (свързан цистеин) — ексклузивен
+          прекурсор, който тялото ти използва, за да произвежда сам глутатион.*
+        </span></p>
+
+        <a class="product-img-link" style="margin-top:.8rem" href="science-glutathione.jpg" target="_blank" rel="noopener" title="Abrir la imagen en grande">
+          <img class="product-img" src="science-glutathione.jpg" width="1600" height="1215" alt="Esquema 'The science of Glutathione' de la presentación oficial de Immunotec: la célula produce glutatión a partir de glicina, glutamato y cisteína" loading="lazy" decoding="async">
+        </a>
+        <p class="footnote" style="text-align:center;margin-bottom:1.25rem"><span class="l-es" lang="es">
+          Imagen de la presentación oficial "Discover Immunotec" (en inglés).
+          Toca la imagen para verla en grande.
+        </span><span class="l-en" lang="en">
+          Image from Immunotec's official presentation "Discover Immunotec" (in English).
+          Tap the image to see it larger.
+        </span><span class="l-bg" lang="bg">
+          Изображение от официалното представяне на Immunotec „Discover Immunotec" (на английски).
+          Докосни изображението, за да го видиш по-голямо.
+        </span></p>
+
+        <blockquote>
+          <p><span class="l-es" lang="es">"El glutatión es de gran importancia en la actividad antioxidante celular, e Immunocal funciona como un sistema de administración de cisteína que puede mejorar la síntesis de glutatión..."</span><span class="l-en" lang="en">"Glutathione is of great importance in cellular antioxidant activity, and Immunocal functions as a cysteine delivery system that can improve glutathione synthesis..."</span><span class="l-bg" lang="bg">„Глутатионът е от голямо значение за клетъчната антиоксидантна активност, а Immunocal функционира като система за доставяне на цистеин, която може да подобри синтеза на глутатион..."</span></p>
+          <p class="footnote" style="margin-top:.4rem"><span class="l-es" lang="es">— Dr. Luc Montagnier, Premio Nobel de Fisiología o Medicina 2008. Cita incluida en la presentación oficial de Immunotec.</span><span class="l-en" lang="en">— Dr. Luc Montagnier, Nobel Prize in Physiology or Medicine 2008. Quote included in Immunotec's official presentation.</span><span class="l-bg" lang="bg">— Д-р Люк Монтание, Нобелова награда за физиология или медицина 2008. Цитат от официалното представяне на Immunotec.</span></p>
+        </blockquote>
+
+        <p class="footnote" style="margin-top:1rem"><span class="l-es" lang="es">
+          *Afirmaciones de la compañía citadas en sus presentaciones oficiales.
+          Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna
+          enfermedad. La experiencia es distinta en cada persona: si tienes alguna condición
+          de salud, consulta antes con un profesional sanitario.
+        </span><span class="l-en" lang="en">
+          *Company statements quoted in its official presentations.
+          This product is not intended to diagnose, treat, cure or prevent any disease.
+          Experience varies from person to person: if you have a health condition, consult
+          a healthcare professional first.
+        </span><span class="l-bg" lang="bg">
+          *Твърдения на компанията, цитирани в официалните ѝ представяния.
+          Този продукт не е предназначен да диагностицира, лекува или предотвратява болести.
+          Опитът е различен за всеки човек: ако имаш здравословно състояние, консултирай се
+          предварително със здравен специалист.
+        </span></p>
       </div>
     </div>
   </section>
@@ -879,20 +1052,21 @@
   <!-- ============ PIE ============ -->
   <footer>
     <div class="container">
-      <p><span class="l-es" lang="es">Immunocal es un suplemento alimenticio. No es un medicamento y no
-      diagnostica, trata ni previene enfermedades. La experiencia es distinta en
-      cada persona.</span><span class="l-en" lang="en">Immunocal is a dietary supplement. It is not a medicine and does not
-      diagnose, treat or prevent diseases. The experience is different for each
-      person.</span><span class="l-bg" lang="bg">Immunocal е хранителна добавка. Не е лекарство и не диагностицира, лекува
-      или предотвратява болести. Опитът е различен за всеки човек.</span></p>
-      <p><span class="l-es" lang="es">Hristo Vasilev es un Consultor Independiente de Immunotec y puede ganar
-      comisiones por las ventas. No es un empleado de la compañía.</span><span class="l-en" lang="en">Hristo Vasilev is an Independent Immunotec Consultant and may earn
-      commissions on sales. He is not a company employee.</span><span class="l-bg" lang="bg">Христо Василев е независим консултант на Immunotec и може да печели
+      <p><span class="l-es" lang="es">Productos de bienestar general. No son medicamentos y no diagnostican,
+      tratan ni previenen enfermedades. No entran fármacos al cuerpo. La experiencia
+      es distinta en cada persona según su cuerpo.</span><span class="l-en" lang="en">General wellness products. They are not medicines and do not diagnose,
+      treat or prevent diseases. No drugs enter the body. The experience is different
+      for each person depending on their body.</span><span class="l-bg" lang="bg">Продукти за общо благополучие. Не са лекарства и не диагностицират, лекуват
+      или предотвратяват болести. В тялото не влиза нищо фармакологично. Опитът е
+      различен за всеки човек според тялото му.</span></p>
+      <p><span class="l-es" lang="es">Hristo Vasilev es un Empresario Independiente de Immunotec y puede ganar
+      comisiones por las ventas. No es empleado de la compañía.</span><span class="l-en" lang="en">Hristo Vasilev is an Independent Business Owner with Immunotec and may
+      earn commissions on sales. He is not a company employee.</span><span class="l-bg" lang="bg">Христо Василев е независим предприемач на Immunotec и може да печели
       комисиони от продажбите. Не е служител на компанията.</span></p>
-      <p><span class="l-es" lang="es">Página personal de un Consultor Independiente. La marca Immunotec es
-      propiedad de su compañía. Esta página no es el sitio oficial de la empresa.</span><span class="l-en" lang="en">Personal page of an Independent Consultant. The Immunotec brand is owned
-      by its company. This page is not the company's official site.</span><span class="l-bg" lang="bg">Лична страница на независим консултант. Марката Immunotec е собственост на
-      компанията. Тази страница не е официалният сайт на компанията.</span></p>
+      <p><span class="l-es" lang="es">Página personal de un Empresario Independiente. La marca es de su compañía;
+      la plataforma es VasilevLegacy.</span><span class="l-en" lang="en">Personal page of an Independent Business Owner. The brand belongs to his
+      company; the platform is VasilevLegacy.</span><span class="l-bg" lang="bg">Лична страница на независим предприемач. Марката е на компанията му;
+      платформата е VasilevLegacy.</span></p>
     </div>
   </footer>
 
