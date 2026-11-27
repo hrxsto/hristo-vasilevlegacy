@@ -13,6 +13,11 @@
    Actualización (2026-11-27): sello de VasilevLegacy en la cabecera (enlazado
    a vasilevlegacy.net) y nueva sección "Cómo tomar Immunocal" con los pasos
    de mezcla según la ficha oficial del producto. Sin promesas de salud.
+   Espejo de los retoques de Vasil del mismo día: sección personal al frente
+   retitulada "El camino de un legado" (kicker retirado), hero y bio en
+   primera persona, pasos 2-3 con flecha, producto comprimido (leche de vaca,
+   certificaciones junto a las cifras), tarjeta "Nuestra ciencia" antes de
+   la FAQ y botón de compra en blanco.
    Regla del repo: sin cifras de ingresos, sin promesas de salud ni de retorno.
 -->
 
@@ -277,6 +282,7 @@
     box-shadow:0 0 0 4px #fff;
   }
   .step h3{margin-bottom:.25rem}
+  .arrow-down{width:1.4rem;height:1.4rem;color:var(--primary);vertical-align:-.3rem;display:inline-block;margin-left:.3rem}
 
   /* cómo tomar: tira visual paso a paso */
   .howto-visual{
@@ -319,6 +325,19 @@
   .stat{background:var(--accent);border-radius:1rem;padding:.85rem .7rem;text-align:center}
   .stat b{display:block;font-family:"Montserrat","Inter",sans-serif;font-size:1.35rem;font-weight:800;color:var(--primary);line-height:1.15}
   .stat small{display:block;font-size:.74rem;color:var(--muted-foreground);margin-top:.15rem}
+  .stat-wide{grid-column:span 2}
+
+  /* nuestra ciencia: tarjeta envolvente */
+  .science-card{
+    background:var(--muted);
+    border:1px solid var(--border);
+    border-radius:1rem;
+    padding:1.25rem 1.5rem;
+    max-width:42rem;
+    margin:0 auto;
+  }
+  .science-title-row{display:flex;align-items:center;justify-content:center;gap:1.2rem}
+  .science-rule{flex:0 1 4.5rem;height:1px;background:var(--border)}
   .gutman{margin:0}
   .gutman img{width:100%;height:auto;border-radius:1rem;border:1px solid var(--border);display:block}
   .gutman figcaption{font-size:.78rem;color:var(--muted-foreground);margin-top:.5rem;text-align:center}
@@ -489,26 +508,95 @@
         </span>
         <div>
           <div class="attend-name"><span class="l-es" lang="es">Te atiende Hristo Vasilev</span><span class="l-en" lang="en">Hristo Vasilev will help you</span><span class="l-bg" lang="bg">При теб е Христо Василев</span></div>
-          <div class="attend-role"><span class="l-es" lang="es">Consultor Independiente de Immunotec</span><span class="l-en" lang="en">Independent Immunotec Consultant</span><span class="l-bg" lang="bg">Независим консултант на Immunotec</span></div>
         </div>
       </div>
 
-      <h1><span class="l-es" lang="es">Tu primer paso con Immunotec es una conversación con Hristo Vasilev</span><span class="l-en" lang="en">Your first step with Immunotec is a conversation with Hristo Vasilev</span><span class="l-bg" lang="bg">Първата ти стъпка с Immunotec е разговор с Христо Василев</span></h1>
+      <h1><span class="l-es" lang="es">Experiencia, crecimiento y nuevas oportunidades</span><span class="l-en" lang="en">Experience, growth and new opportunities</span><span class="l-bg" lang="bg">Опит, растеж и нови възможности</span></h1>
       <p class="hero-lede"><span class="l-es" lang="es">
-        Si has llegado hasta aquí, es porque algo de Immunocal te ha llamado la atención.
-        En pocos minutos vas a entender qué es, cómo se toma y cómo pedirlo.
-        Te lo explica una persona real, sin presión y a tu ritmo.
+        Conoce mi historia, mi visión y los proyectos en los que creo. Comparto
+        experiencias, ideas y oportunidades de crecimiento personal y profesional,
+        siempre desde la cercanía, la confianza y la libertad de elegir tu propio
+        camino. Si algo de lo que comparto despierta tu curiosidad, hablemos.
       </span><span class="l-en" lang="en">
-        If you have made it here, it is because something about Immunocal caught your
-        attention. In a few minutes you will understand what it is, how to take it and
-        how to order it. A real person explains it, no pressure, at your own pace.
+        Get to know my story, my vision and the projects I believe in. I share
+        experiences, ideas and opportunities for personal and professional growth,
+        always with closeness, trust and the freedom to choose your own path.
+        If anything I share sparks your curiosity, let's talk.
       </span><span class="l-bg" lang="bg">
-        Ако си стигнал дотук, нещо в Immunocal е привлякло вниманието ти.
-        За няколко минути ще разбереш какво е, как се приема и как да го поръчаш.
-        Това ще ти обясни реален човек — без натиск и в твоя ритъм.
+        Опознай моята история, визията ми и проектите, в които вярвам. Споделям
+        опит, идеи и възможности за лично и професионално развитие — винаги с
+        близост, доверие и свободата да избереш своя път. Ако нещо от споделеното
+        разпали любопитството ти, да поговорим.
       </span></p>
 
 
+    </div>
+  </section>
+
+  <!-- ============ COMPROMISO ============ -->
+  <section>
+    <div class="container">
+      <h2 class="reveal"><span class="l-es" lang="es">El camino de un legado</span><span class="l-en" lang="en">The path of a legacy</span><span class="l-bg" lang="bg">Пътят на едно наследство</span></h2>
+      <div class="science-grid" style="margin-top:1.1rem">
+        <div>
+            <p style="margin:0 0 .7rem"><span class="l-es" lang="es">
+        Me asocio a Immunotec de la mano de mi padre y socio, Vasil
+        Vasilev, y me desarrollo dentro de su ecosistema corporativo multinacional.
+        De origen búlgaro y residente en España, combino mis estudios de psicología
+        con la construcción de mi propio equipo internacional.
+      </span><span class="l-en" lang="en">
+        I joined Immunotec through my father and partner Vasil
+        Vasilev, and I develop my career within its multinational corporate ecosystem.
+        Of Bulgarian origin and living in Spain, I combine my psychology studies
+        with building my own international team.
+      </span><span class="l-bg" lang="bg">
+        Присъединявам се към Immunotec чрез баща ми и партньор ми
+        Васил Василев, и се развивам в мултинационалната ѝ корпоративна екосистема.
+        С български произход и живеещ в Испания, съчетавам следването ми по
+        психология с изграждането на собствен международен екип.
+      </span></p>
+      <p style="margin:0 0 .7rem"><span class="l-es" lang="es">
+        Cuando mi padre me asoció, aún no me sentía preparado. En lugar de lanzarme
+        a ciegas, dediqué un año entero a prepararme: conocí el producto, estudié
+        el plan de negocio y trabajé mi comunicación y mi disciplina. Hoy doy el
+        paso con claridad sobre lo que hago, por qué lo hago y a dónde quiero llegar.
+      </span><span class="l-en" lang="en">
+        When my father enrolled me, I did not feel ready yet. Instead of jumping
+        in blind, I spent a full year preparing: getting to know the product,
+        studying the business plan and working on my communication and discipline.
+        Today I take the step with clarity about what I do, why I do it and
+        where I want to go.
+      </span><span class="l-bg" lang="bg">
+        Когато баща ми ме асоциира, още не се чувствах подготвен. Вместо да
+        се хвърля на сляпо, посветих цяла година на подготовка: опознах продукта,
+        проучих бизнес плана и работих върху комуникацията и дисциплината си. Днес
+        правя стъпката с яснота какво правя, защо го правя и накъде искам да стигна.
+      </span></p>
+      <p style="margin:0"><span class="l-es" lang="es">
+        Mi compromiso con las personas que me acompañan es el mismo que me guía a
+        mí: atención y dedicación a las necesidades de cada uno, formación continua
+        y una mentalidad de aprendizaje constante. Y como conozco de primera mano
+        las historias de bienestar de mi círculo, comparto Immunocal con la
+        seriedad y la responsabilidad de quien pone su nombre en cada conversación.
+      </span><span class="l-en" lang="en">
+        My commitment to the people who join me is the same one that guides
+        me: attention and dedication to each person's needs, continuous training
+        and a constant-learning mindset. And because I know the wellness stories
+        of my circle first-hand, I share Immunocal with the seriousness and
+        responsibility of someone who puts their name on every conversation.
+      </span><span class="l-bg" lang="bg">
+        Ангажиментът ми към хората, които ме придружават, е същият, който ме води:
+        внимание и отдаденост на нуждите на всеки, непрекъснато обучение
+        и нагласа за постоянно развитие. И тъй като познавам от първо лице
+        историите за благополучие в обкръжението си, споделям Immunocal с
+        сериозността и отговорността на човек, който слага името си във всеки
+        разговор.
+      </span></p>
+        </div>
+        <figure class="gutman hristo-fit">
+          <img src="perfil-hristo.jpg" width="1024" height="1280" alt="Hristo Vasilev, Consultor Independiente de Immunotec" loading="lazy" decoding="async">
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -534,14 +622,11 @@
         <div class="step">
           <div class="step-num">2</div>
           <div>
-            <h3><span class="l-es" lang="es">Habla con Hristo</span><span class="l-en" lang="en">Talk to Hristo</span><span class="l-bg" lang="bg">Говори с Христо</span></h3>
-            <p><span class="l-es" lang="es">Cuéntale qué te interesa. Hristo Vasilev, Consultor Independiente de
-            Immunotec, resuelve tus dudas y te indica cómo pedirlo. Una conversación
-            abierta, de acuerdo a tus necesidades.</span><span class="l-en" lang="en">Tell him what interests you. Hristo Vasilev, Independent Immunotec
-            Consultant, answers your questions and shows you how to order it. An open
-            conversation, based on your needs.</span><span class="l-bg" lang="bg">Разкажи какво те интересува. Христо Василев, независим консултант на
-            Immunotec, отговаря на въпросите ти и ти показва как да го поръчаш.
-            Отворен разговор, според твоите нужди.</span></p>
+            <h3><span class="l-es" lang="es">Envíame un mensaje</span><span class="l-en" lang="en">Send me a message</span><span class="l-bg" lang="bg">Изпрати ми съобщение</span></h3>
+            <p><span class="l-es" lang="es">Cuéntame qué te interesa. Resuelvo tus dudas y te indico cómo pedirlo.
+            Una conversación abierta, de acuerdo a tus necesidades.</span><span class="l-en" lang="en">Tell me what interests you. I answer your questions and show you how to
+            order it. An open conversation, based on your needs.</span><span class="l-bg" lang="bg">Разкажи ми какво те интересува. Аз отговарям на въпросите ти и ти
+            показвам как да го поръчаш. Отворен разговор, според твоите нужди.</span></p>
           </div>
         </div>
         <div class="step">
@@ -549,9 +634,9 @@
           <div>
             <h3><span class="l-es" lang="es">Tú decides cómo empezar</span><span class="l-en" lang="en">You decide how to start</span><span class="l-bg" lang="bg">Ти решаваш как да започнеш</span></h3>
             <p><span class="l-es" lang="es">Pides Immunocal como cliente o conoces cómo funciona el negocio.
-            Cualquiera de los dos caminos empieza con tu mensaje a Hristo Vasilev.</span><span class="l-en" lang="en">You order Immunocal as a customer or learn how the business works.
-            Either path starts with your message to Hristo Vasilev.</span><span class="l-bg" lang="bg">Поръчваш Immunocal като клиент или научаваш как работи бизнесът.
-            И двата пътя започват със съобщение до Христо Василев.</span></p>
+            Cualquiera de los dos caminos empieza por esta presentación que te dejo a continuación:</span><span class="l-en" lang="en">You order Immunocal as a customer or learn how the business works.
+            Either path starts with the short presentation I leave you below:</span><span class="l-bg" lang="bg">Поръчваш Immunocal като клиент или научаваш как работи бизнесът.
+            И двата пътя започват с кратката презентация, която ти оставям по-долу:</span> <svg class="arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 v14 M6 13 l6 6 6 -6"/></svg></p>
           </div>
         </div>
       </div>
@@ -561,7 +646,6 @@
   <!-- ============ VIDEO ============ -->
   <section>
     <div class="container">
-      <p class="kicker"><span class="l-es" lang="es">Presentación corta</span><span class="l-en" lang="en">Short presentation</span><span class="l-bg" lang="bg">Кратка презентация</span></p>
       <h2 class="reveal"><span class="l-es" lang="es">Míralo en pocos minutos</span><span class="l-en" lang="en">Watch it in a few minutes</span><span class="l-bg" lang="bg">Гледай го за няколко минути</span></h2>
 
       <div class="card" style="margin-top:1.25rem">
@@ -601,35 +685,9 @@
         </span><span class="l-bg" lang="bg">
           Изображение на официалната опаковка на Immunocal (на английски).
         </span></p>
-        <p class="path-tag"><span class="l-es" lang="es">Suplemento alimenticio</span><span class="l-en" lang="en">Dietary supplement</span><span class="l-bg" lang="bg">Хранителна добавка</span></p>
-        <h3 style="margin:.2rem 0 .5rem;font-size:1.3rem">Immunocal</h3>
-
-        <p><span class="l-es" lang="es">
-          Proteína de suero de leche aislada que se mezcla con agua, leche o zumo y
-          forma parte de tu día a día. La proteína es un nutriente esencial:
-          tu cuerpo la usa para construir y mantener la masa muscular.
-        </span><span class="l-en" lang="en">
-          Isolated whey protein that mixes with water, milk or juice and becomes part
-          of your daily routine. Protein is an essential nutrient: your body uses it
-          to build and maintain muscle mass.
-        </span><span class="l-bg" lang="bg">
-          Изолиран протеин от суроватка, който се смесва с вода, мляко или сок и
-          става част от ежедневието ти. Протеинът е основно хранително вещество:
-          тялото го използва, за да изгражда и поддържа мускулната маса.
-        </span></p>
-
-        <div class="chips">
-          <span class="chip"><span class="l-es" lang="es">Proteína de suero de leche</span><span class="l-en" lang="en">Whey protein</span><span class="l-bg" lang="bg">Протеин от суроватка</span></span>
-          <span class="chip"><span class="l-es" lang="es">Se mezcla con líquidos</span><span class="l-en" lang="en">Mixes with liquids</span><span class="l-bg" lang="bg">Смесва се с течности</span></span>
-          <span class="chip"><span class="l-es" lang="es">Uso diario</span><span class="l-en" lang="en">Daily use</span><span class="l-bg" lang="bg">Ежедневна употреба</span></span>
-        </div>
-
-        <ul class="checks">
-          <li><span class="l-es" lang="es">Aporta proteína de alta calidad</span><span class="l-en" lang="en">Provides high-quality protein</span><span class="l-bg" lang="bg">Осигурява висококачествен протеин</span></li>
-          <li><span class="l-es" lang="es">La proteína contribuye al aumento y a la conservación de la masa muscular</span><span class="l-en" lang="en">Protein contributes to the growth and maintenance of muscle mass</span><span class="l-bg" lang="bg">Протеинът допринася за изграждането и поддържането на мускулна маса</span></li>
-          <li><span class="l-es" lang="es">La proteína contribuye al mantenimiento de los huesos en condiciones normales</span><span class="l-en" lang="en">Protein contributes to the maintenance of normal bones</span><span class="l-bg" lang="bg">Протеинът допринася за поддържането на костите в нормално състояние</span></li>
-          <li><span class="l-es" lang="es">Formato en polvo, fácil de incorporar a la rutina</span><span class="l-en" lang="en">Powder format, easy to fit into your routine</span><span class="l-bg" lang="bg">Формат на прах, лесен за включване в ежедневието</span></li>
-        </ul>
+        <p class="path-tag" style="margin-top:1.4rem"><span class="l-es" lang="es">Cómo tomarlo</span><span class="l-en" lang="en">How to take it</span><span class="l-bg" lang="bg">Как се приема</span></p>
+        <p style="margin:0"><span class="l-es" lang="es">Immunocal es un suplemento alimenticio de Immunotec: proteína del suero de la leche de vaca, aislada, que se mezcla con agua, leche o zumo y forma parte del día a día; la proteína es un nutriente esencial que tu cuerpo usa para construir y mantener la masa muscular.</span><span class="l-en" lang="en">Immunocal is a dietary supplement by Immunotec: isolated whey protein from cow's milk that mixes with water, milk or juice and becomes part of your daily routine; protein is an essential nutrient your body uses to build and maintain muscle mass.</span><span class="l-bg" lang="bg">Immunocal е хранителна добавка на Immunotec: изолиран протеин от суроватката на краве мляко, който се смесва с вода, мляко или сок и става част от ежедневието; протеинът е основно хранително вещество, с което тялото изгражда и поддържа мускулната маса.</span></p>
+        <p style="margin:.6rem 0 0"><span class="l-es" lang="es">Para tomarlo, mezcla el contenido de un sobre con agua fría y, después, combínalo con el zumo, el yogur o la bebida que prefieras, una vez al día y según las instrucciones de preparación del envase. Si tienes cualquier duda, pregúntame.</span><span class="l-en" lang="en">To take it, mix the contents of one sachet with cold water and then combine it with the juice, yogurt or drink of your choice, once a day and following the preparation instructions on the container. If you have any questions, ask me.</span><span class="l-bg" lang="bg">За приема му разтвори съдържанието на едно саше в студена вода и след това го комбинирай с сок, кисело мляко или напитката, която предпочиташ — веднъж на ден, според инструкциите за приготвяне на опаковката. Ако имаш въпрос, попитай ме.</span></p>
       </div>
     </div>
   </section>
@@ -642,16 +700,21 @@
       <div class="card" style="margin-top:1.25rem">
         <p><span class="l-es" lang="es">
           Tu cuerpo produce glutatión a partir de tres aminoácidos: glicina, glutamato
-          y cisteína. Immunocal aporta Cisteína Enlazada®, un precursor exclusivo que
-          tu cuerpo utiliza para producir glutatión por sí mismo.
+          y cisteína. Immunocal aporta <b>Cisteína Enlazada®</b>, un precursor exclusivo
+          que tu cuerpo utiliza para producir glutatión por sí mismo. Esta patente es
+          precisamente la que marca la diferencia de resultados en comparación con
+          otras marcas similares.
         </span><span class="l-en" lang="en">
           Your body makes glutathione from three amino acids: glycine, glutamate and
-          cysteine. Immunocal provides Bonded Cysteine® (Cisteína Enlazada®), an
-          exclusive precursor your body uses to produce glutathione on its own.*
+          cysteine. Immunocal provides <b>Bonded Cysteine®</b> (Cisteína Enlazada®), an
+          exclusive precursor your body uses to produce glutathione on its own.* This
+          patent is precisely what makes the difference in results compared with
+          other similar brands.
         </span><span class="l-bg" lang="bg">
           Тялото ти произвежда глутатион от три аминокиселини: глицин, глутамат и
-          цистеин. Immunocal осигурява Cisteína Enlazada® (свързан цистеин) — ексклузивен
-          прекурсор, който тялото ти използва, за да произвежда сам глутатион.*
+          цистеин. Immunocal осигурява <b>Cisteína Enlazada®</b> (свързан цистеин) — ексклузивен
+          прекурсор, който тялото ти използва, за да произвежда сам глутатион.* Именно
+          този патент прави разликата в резултатите в сравнение с други подобни марки.
         </span></p>
 
         <img class="product-img" style="margin-top:.8rem" src="science-glutathione.jpg" width="1600" height="1215" alt="Esquema 'The science of Glutathione' de la presentación oficial de Immunotec: la célula produce glutatión a partir de glicina, glutamato y cisteína" loading="lazy" decoding="async">
@@ -665,7 +728,7 @@
 
         <blockquote>
           <p><span class="l-es" lang="es">"El glutatión es de gran importancia en la actividad antioxidante celular, e Immunocal funciona como un sistema de administración de cisteína que puede mejorar la síntesis de glutatión..."</span><span class="l-en" lang="en">"Glutathione is of great importance in cellular antioxidant activity, and Immunocal functions as a cysteine delivery system that can improve glutathione synthesis..."</span><span class="l-bg" lang="bg">„Глутатионът е от голямо значение за клетъчната антиоксидантна активност, а Immunocal функционира като система за доставяне на цистеин, която може да подобри синтеза на глутатион..."</span></p>
-          <p class="footnote" style="margin-top:.4rem"><span class="l-es" lang="es">— Dr. Luc Montagnier, Premio Nobel de Fisiología o Medicina 2008. Cita incluida en la presentación oficial de Immunotec.</span><span class="l-en" lang="en">— Dr. Luc Montagnier, Nobel Prize in Physiology or Medicine 2008. Quote included in Immunotec's official presentation.</span><span class="l-bg" lang="bg">— Д-р Люк Монтание, Нобелова награда за физиология или медицина 2008. Цитат от официалното представяне на Immunotec.</span></p>
+          <p class="footnote" style="margin-top:.4rem"><span class="l-es" lang="es">— Dr. Luc Montagnier, Premio Nobel de Fisiología o Medicina 2008. Descubridor del VIH, virus causante del SIDA. Cita de: Montagnier L, Olivier R, Pasquier C, eds. <em>Oxidative Stress in Cancer, AIDS and Neurodegenerative Diseases</em>. Nueva York: Marcel Dekker; 1998, artículo 42.</span><span class="l-en" lang="en">— Dr. Luc Montagnier, Nobel Prize in Physiology or Medicine 2008. Discoverer of HIV, the virus that causes AIDS. Quote from: Montagnier L, Olivier R, Pasquier C, eds. <em>Oxidative Stress in Cancer, AIDS and Neurodegenerative Diseases</em>. New York: Marcel Dekker; 1998, article 42.</span><span class="l-bg" lang="bg">— Д-р Люк Монтание, Нобелова награда за физиология или медицина 2008. Откривател на HIV, вируса, причиняващ СПИН. Цитат от: Montagnier L, Olivier R, Pasquier C, eds. <em>Oxidative Stress in Cancer, AIDS and Neurodegenerative Diseases</em>. Ню Йорк: Marcel Dekker; 1998, статия 42.</span></p>
         </blockquote>
 
         <div class="science-grid" style="margin-top:1.5rem">
@@ -682,148 +745,17 @@
               <div class="stat"><span class="l-es" lang="es"><b>+125</b><small>instituciones involucradas</small></span><span class="l-en" lang="en"><b>125+</b><small>institutions involved</small></span><span class="l-bg" lang="bg"><b>+125</b><small>ангажирани институции</small></span></div>
               <div class="stat"><span class="l-es" lang="es"><b>78</b><small>patentes internacionales</small></span><span class="l-en" lang="en"><b>78</b><small>international patents</small></span><span class="l-bg" lang="bg"><b>78</b><small>международни патента</small></span></div>
               <div class="stat"><span class="l-es" lang="es"><b>+70</b><small>atletas patrocinados</small></span><span class="l-en" lang="en"><b>70+</b><small>sponsored athletes</small></span><span class="l-bg" lang="bg"><b>+70</b><small>спонсорирани спортисти</small></span></div>
+              <div class="stat stat-wide"><span class="l-es" lang="es"><b>Pruebas de terceros</b><small>Informed Sport y Clean Label</small></span><span class="l-en" lang="en"><b>Third-party testing</b><small>Informed Sport and Clean Label</small></span><span class="l-bg" lang="bg"><b>Независими изпитвания</b><small>Informed Sport и Clean Label</small></span></div>
+              <div class="stat stat-wide"><span class="l-es" lang="es"><b>PDR y CPS</b><small>Libros de referencia médica (EE. UU. y Canadá)</small></span><span class="l-en" lang="en"><b>PDR and CPS</b><small>Medical reference books (U.S. and Canada)</small></span><span class="l-bg" lang="bg"><b>PDR и CPS</b><small>Медицински справочници (САЩ и Канада)</small></span></div>
             </div>
-            <p class="footnote"><span class="l-es" lang="es">Pruebas y certificaciones de terceros: Informed Sport y Clean Label. Immunocal figura en los libros de referencia médica PDR (EE. UU.) y CPS (Canadá).</span><span class="l-en" lang="en">Third-party testing and certifications: Informed Sport and Clean Label. Immunocal is listed in the PDR (U.S.) and CPS (Canada) medical reference books.</span><span class="l-bg" lang="bg">Независими изпитвания и сертификации: Informed Sport и Clean Label. Immunocal е включен в медицинските справочници PDR (САЩ) и CPS (Канада).</span></p>
           </div>
           <figure class="gutman">
             <img src="dr-gutman.jpg" width="901" height="835" alt="Dr. Jimmy Gutman, Presidente del Consejo Asesor Científico de Immunotec" loading="lazy" decoding="async">
             <figcaption><span class="l-es" lang="es">Dr. Jimmy Gutman, Presidente del Consejo Asesor Científico de Immunotec</span><span class="l-en" lang="en">Dr. Jimmy Gutman, Chairman of Immunotec's Scientific Advisory Board</span><span class="l-bg" lang="bg">Д-р Джимъти Гътман, председател на Научния консултативен съвет на Immunotec</span></figcaption>
           </figure>
+          <img class="product-img" style="margin-top:.9rem" src="certificaciones-immunocal.png" width="1083" height="202" alt="Certificaciones de Immunocal: sello de garantía Immunotec, Kosher UD, Informed Sport, Clean Label Project, más de 25 años de investigación y Gluten free" loading="lazy" decoding="async">
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CÓMO TOMAR ============ -->
-  <section>
-    <div class="container">
-      <p class="kicker"><span class="l-es" lang="es">El uso</span><span class="l-en" lang="en">How to take it</span><span class="l-bg" lang="bg">Употребата</span></p>
-      <h2 class="reveal"><span class="l-es" lang="es">Cómo tomar Immunocal</span><span class="l-en" lang="en">How to take Immunocal</span><span class="l-bg" lang="bg">Как се приема Immunocal</span></h2>
-
-      <div class="stack" style="margin-top:1.25rem;max-width:52rem">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div>
-            <h3><span class="l-es" lang="es">Un sobre al día</span><span class="l-en" lang="en">One sachet a day</span><span class="l-bg" lang="bg">По едно саше на ден</span></h3>
-            <p><span class="l-es" lang="es">Cada sobre viene dosificado individualmente y el envase indica tomarlo una vez al día. Sigue las instrucciones de preparación del envase y, si tienes cualquier duda, pregúntale a Hristo.</span><span class="l-en" lang="en">Each sachet comes individually dosed and the container says to take it once a day. Follow the preparation instructions on the container and ask Hristo if you have any questions.</span><span class="l-bg" lang="bg">Всяко саше е дозирано индивидуално, а опаковката указва прием веднъж на ден. Следвай инструкциите за приготвяне на опаковката и, ако имаш въпрос, попитай Христо.</span></p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div>
-            <h3><span class="l-es" lang="es">Mezcla con 30 ml de bebida fría</span><span class="l-en" lang="en">Mix with 30 ml of cold drink</span><span class="l-bg" lang="bg">Разтвори в 30 ml студена напитка</span></h3>
-            <p><span class="l-es" lang="es">Según la ficha oficial del producto, mezcla el contenido de un sobre con 30 ml de tu bebida fría favorita: agua, leche o zumo.</span><span class="l-en" lang="en">According to the official product sheet, mix the contents of one sachet with 30 ml of your favourite cold drink: water, milk or juice.</span><span class="l-bg" lang="bg">Според официалната листовка на продукта разтвори съдържанието на едно саше в 30 ml от любимата ти студена напитка: вода, мляко или сок.</span></p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div>
-            <h3><span class="l-es" lang="es">Bate, disuelve y bebe</span><span class="l-en" lang="en">Shake, dissolve and drink</span><span class="l-bg" lang="bg">Разбъркай, разтвори и изпий</span></h3>
-            <p><span class="l-es" lang="es">Bate o agita hasta que el polvo se disuelva por completo y bébelo recién hecho. Muchas personas lo toman por la mañana, integrado en su rutina diaria.</span><span class="l-en" lang="en">Shake or stir until the powder dissolves completely and drink it freshly made. Many people take it in the morning, as part of their daily routine.</span><span class="l-bg" lang="bg">Разбъркай или разтърси, докато прахът се разтвори напълно, и го изпий току-що приготвен. Много хора го приемат сутрин, като част от ежедневната си рутина.</span></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="howto-visual" aria-hidden="true">
-        <div class="howto-item">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="17" y="10" width="30" height="44" rx="4"/>
-            <path d="M17 19 h30" stroke-dasharray="3 4"/>
-            <path d="M23 42 c3 -2.5 6 -2.5 9 0 s6 2.5 9 0"/>
-          </svg>
-          <span class="howto-caption"><span class="l-es" lang="es">El sobre</span><span class="l-en" lang="en">The sachet</span><span class="l-bg" lang="bg">Сашето</span></span>
-        </div>
-        <span class="howto-arrow">→</span>
-        <div class="howto-item">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 10 L42 10 L38.5 54 L25.5 54 Z"/>
-            <path d="M24.6 28 L39.4 28"/>
-            <rect x="26.5" y="33" width="9" height="9" rx="2"/>
-            <rect x="30" y="40" width="8" height="8" rx="2"/>
-          </svg>
-          <span class="howto-caption"><span class="l-es" lang="es">30 ml de bebida fría</span><span class="l-en" lang="en">30 ml of cold drink</span><span class="l-bg" lang="bg">30 ml студена напитка</span></span>
-        </div>
-        <span class="howto-arrow">→</span>
-        <div class="howto-item">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 24 h24 v24 a5 5 0 0 1 -5 5 h-14 a5 5 0 0 1 -5 -5 Z"/>
-            <path d="M44 10 L35 33"/>
-            <circle cx="33.5" cy="36" r="3.5"/>
-            <path d="M24 40 c2.5 -2 5 -2 7.5 0 s5 2 7.5 0"/>
-          </svg>
-          <span class="howto-caption"><span class="l-es" lang="es">Bate y bebe</span><span class="l-en" lang="en">Shake and drink</span><span class="l-bg" lang="bg">Разбъркай и изпий</span></span>
-        </div>
-      </div>
-
-      <p class="footnote" style="text-align:center"><span class="l-es" lang="es">Instrucciones de mezcla según la ficha oficial del producto de Immunotec. Sigue siempre las instrucciones de preparación del envase.</span><span class="l-en" lang="en">Mixing instructions according to Immunotec's official product sheet. Always follow the preparation instructions on the container.</span><span class="l-bg" lang="bg">Инструкции за разбъркване според официалната листовка на продукта на Immunotec. Винаги следвай инструкциите за приготвяне на опаковката.</span></p>
-    </div>
-  </section>
-
-  <!-- ============ COMPROMISO ============ -->
-  <section>
-    <div class="container">
-      <p class="kicker"><span class="l-es" lang="es">El compromiso</span><span class="l-en" lang="en">The commitment</span><span class="l-bg" lang="bg">Ангажиментът</span></p>
-      <h2 class="reveal"><span class="l-es" lang="es">¿Por qué Hristo?</span><span class="l-en" lang="en">Why Hristo?</span><span class="l-bg" lang="bg">Защо Христо?</span></h2>
-      <div class="science-grid" style="margin-top:1.1rem">
-        <div>
-            <p style="margin:0 0 .7rem"><span class="l-es" lang="es">
-        Hristo Vasilev se asocia a Immunotec de la mano de su padre y socio, Vasil
-        Vasilev, y se desarrolla dentro de su ecosistema corporativo multinacional.
-        De origen búlgaro y residente en España, combina sus estudios de psicología
-        con la construcción de su propio equipo internacional.
-      </span><span class="l-en" lang="en">
-        Hristo Vasilev joined Immunotec through his father and partner Vasil
-        Vasilev, and develops himself within its multinational corporate ecosystem.
-        Of Bulgarian origin and living in Spain, he combines his psychology studies
-        with building his own international team.
-      </span><span class="l-bg" lang="bg">
-        Христо Василев се присъединява към Immunotec чрез баща си и партньор си
-        Васил Василев, и се развива в мултинационалната ѝ корпоративна екосистема.
-        С български произход и живеещ в Испания, той съчетава следването си по
-        психология с изграждането на собствен международен екип.
-      </span></p>
-      <p style="margin:0 0 .7rem"><span class="l-es" lang="es">
-        Cuando su padre le asoció, aún no se sentía preparado. En lugar de lanzarse
-        a ciegas, dedicó un año entero a prepararse: conoció el producto, estudió
-        el plan de negocio y trabajó su comunicación y su disciplina. Hoy da el
-        paso con claridad sobre lo que hace, por qué lo hace y a dónde quiere llegar.
-      </span><span class="l-en" lang="en">
-        When his father enrolled him, he did not feel ready yet. Instead of jumping
-        in blind, he spent a full year preparing: getting to know the product,
-        studying the business plan and working on his communication and discipline.
-        Today he takes the step with clarity about what he does, why he does it and
-        where he wants to go.
-      </span><span class="l-bg" lang="bg">
-        Когато баща му го асоциира, той още не се чувстваше подготвен. Вместо да
-        се хвърли на сляпо, посвети цяла година на подготовка: опозна продукта,
-        проучи бизнес плана и работи върху комуникацията и дисциплината си. Днес
-        прави стъпката с яснота какво прави, защо го прави и накъде иска да стигне.
-      </span></p>
-      <p style="margin:0"><span class="l-es" lang="es">
-        Su compromiso con las personas que le acompañan es el mismo que le guía a
-        él: atención y dedicación a las necesidades de cada uno, formación continua
-        y una mentalidad de aprendizaje constante. Y como conoce de primera mano
-        las historias de bienestar de su círculo, comparte Immunocal con la
-        seriedad y la responsabilidad de quien pone su nombre en cada conversación.
-      </span><span class="l-en" lang="en">
-        His commitment to the people who join him is the same one that guides
-        him: attention and dedication to each person's needs, continuous training
-        and a constant-learning mindset. And because he knows the wellness stories
-        of his circle first-hand, he shares Immunocal with the seriousness and
-        responsibility of someone who puts his name on every conversation.
-      </span><span class="l-bg" lang="bg">
-        Ангажиментът му към хората, които го придружават, е същият, който го води
-        и него: внимание и отдаденост на нуждите на всеки, непрекъснато обучение
-        и нагласа за постоянно развитие. И тъй като познава от първо лице
-        историите за благополучие в обкръжението си, споделя Immunocal с
-        сериозността и отговорността на човек, който слага името си във всеки
-        разговор.
-      </span></p>
-        </div>
-        <figure class="gutman hristo-fit">
-          <img src="perfil-hristo.jpg" width="1024" height="1280" alt="Hristo Vasilev, Consultor Independiente de Immunotec" loading="lazy" decoding="async">
-        </figure>
       </div>
     </div>
   </section>
@@ -910,7 +842,7 @@
           Hristo Vasilev supports you before and after your order.</span><span class="l-bg" lang="bg">Поръчваш го в официалния сайт на компанията. Ако възникне въпрос,
           Христо Василев те придружава преди и след поръчката.</span></p>
           <div style="display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap">
-            <a class="btn btn-primary" href="https://www.immunotec.com/es-ES/hristo-vasilev/products" target="_blank" rel="noopener"><span class="l-es" lang="es">Comprar Immunocal</span><span class="l-en" lang="en">Buy Immunocal</span><span class="l-bg" lang="bg">Поръчай Immunocal</span></a>
+            <a class="btn btn-secondary" href="https://www.immunotec.com/es-ES/hristo-vasilev/products" target="_blank" rel="noopener"><span class="l-es" lang="es">Comprar Immunocal</span><span class="l-en" lang="en">Buy Immunocal</span><span class="l-bg" lang="bg">Поръчай Immunocal</span></a>
             <img src="immunocal-abierto.jpg" width="600" height="967" style="height:20rem;width:auto;border-radius:.75rem;border:1px solid var(--border)" alt="Sobrecito de Immunocal abierto sobre proteína en polvo" loading="lazy" decoding="async">
           </div>
         </div>
@@ -996,6 +928,26 @@
 <path transform="rotate(-74.819)" d="M0.14 201.88 7.34 186.13H8.99L16.19 201.88H14.43L12.56 197.67H3.77L1.88 201.88ZM4.37 196.32H11.96L8.15 187.86Z"/></g></g></svg>
 
 
+    </div>
+  </section>
+
+  <!-- ============ NUESTRA CIENCIA ============ -->
+  <section>
+    <div class="container">
+      <div class="science-card" style="text-align:center">
+        <p class="kicker" style="margin-bottom:.35rem"><span class="l-es" lang="es">La evidencia</span><span class="l-en" lang="en">The evidence</span><span class="l-bg" lang="bg">Доказателствата</span></p>
+        <div class="science-title-row reveal">
+          <span class="science-rule" aria-hidden="true"></span>
+          <h2><span class="l-es" lang="es">Nuestra ciencia</span><span class="l-en" lang="en">Our science</span><span class="l-bg" lang="bg">Нашата наука</span></h2>
+          <span class="science-rule" aria-hidden="true"></span>
+        </div>
+        <p style="max-width:36rem;margin:0 auto .9rem"><span class="l-es" lang="es">Los estudios clínicos y la lista completa de patentes están disponibles en la página oficial de la compañía:</span><span class="l-en" lang="en">The clinical studies and the full patent list are available on the company's official page:</span><span class="l-bg" lang="bg">Клиничните проучвания и пълният списък с патенти са налични на официалната страница на компанията:</span></p>
+        <div class="cta-row" style="justify-content:center;margin-top:0">
+          <a class="btn btn-secondary l-es" lang="es" href="https://www.immunotec.com/es-ES/hristo-vasilev/studies-and-standards" target="_blank" rel="noopener">Ver estudios y patentes</a>
+          <a class="btn btn-secondary l-en" lang="en" href="https://www.immunotec.com/en-150/hristo-vasilev/studies-and-standards" target="_blank" rel="noopener">See studies and patents</a>
+          <a class="btn btn-secondary l-bg" lang="bg" href="https://www.immunotec.com/en-150/hristo-vasilev/studies-and-standards" target="_blank" rel="noopener">Виж проучванията и патентите</a>
+        </div>
+      </div>
     </div>
   </section>
 
